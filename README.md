@@ -1,4 +1,5 @@
 # [혼자 공부하는 자바 스크립트]
+<img src = "https://user-images.githubusercontent.com/83990943/149663581-207ae692-a465-46be-bbf0-90e82fb68db9.png">
 
 ## 🎈 About
 > 2022년 혼공학습단 **7기**입니다.  
