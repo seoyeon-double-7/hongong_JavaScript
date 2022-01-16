@@ -34,7 +34,7 @@
 
 |Day|Chapter|Link|
 |---|---|---|
-|1️⃣1주차|01~02|[✔완료](https://github.com/seoyeon-double-7)|
+|1️⃣1주차|01~02|[✔완료](https://github.com/seoyeon-double-7/JAVA-MINI-PROJECTS/tree/main/BusCheck)|
 |2️⃣2주차|03|null|
 |3️⃣3주차|04|null|
 |4️⃣4주차|05|null|
