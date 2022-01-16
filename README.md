@@ -3,8 +3,8 @@
 ## 🎈 About
 > 2022년 혼공학습단 **7기**입니다.  
 > 활동기간 : 2022.01.10 ~ 02.27   
-> 공부 언어 : ** JAVASCRIPT **  
-> **참고하는 책** : [혼자공부하는 자바스크립트](yes24.com/Product/Goods/96234546)  
+> 공부 언어 : **JAVASCRIPT**  
+> **참고하는 책** : [혼자공부하는 자바스크립트](http://www.yes24.com/Product/Goods/96234546)  
 
 <img src = "https://user-images.githubusercontent.com/83990943/149660939-6478836e-0afc-40b2-9144-ca944b86e586.jpg" width="30%" height="30%">  
 
