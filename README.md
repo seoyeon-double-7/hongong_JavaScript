@@ -31,6 +31,7 @@
 <img src = "https://user-images.githubusercontent.com/83990943/149660457-57d08f55-1b9b-415c-864c-bd6d7ef2bff7.png" width="70%" height="70%">
 
 ## 정리
+> 노트 정리 : [Lecture Note Here!](https://docs.google.com/document/d/1eGx57vEDUouAXzvLL-IshyaSRPjBY6Q-NmPp5sABJLg/edit?usp=sharing)
 
 |Day|Chapter|Link|
 |---|---|---|
