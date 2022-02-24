@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>오늘의 할일</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <style>
+        *{
+            font-family: 'Jua', sans-serif;
+        }
+        body{
+            background-color: #EFEFEF;
+        }
+        .wrap2{
+            margin: 10px auto;
+            width : 400px;
+            text-align: center;
+        }
+        .to-do-box{
+            height: 300px;
+            color: white;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://wordrow.kr/static/images_amp_story/56.webp");
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+            padding-top: 50px;
+        }
+        input{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #todo{
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap2">
+        <div class="to-do-box">
+            <p><h1>To-do List</h1></p>
+            <p><h5>👇오늘 할일을 추가해보세요👇</h5></p><br>
+            <p>할일을 적고 추가하기 버튼을 눌러보세요</p>
+        </div>
+        <div  class="mb-3">
+            <input type="text" class="form-control" id="todo" placeholder=">> 할일을 추가하세요">
+        </div>
+        <button id="add-button" type="button" class="btn btn-outline-dark">추가하기</button>
+        <div id="todo-list">
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        //문서 객체 가져오기
+        const input = document.querySelector('#todo')
+        const todoList = document.querySelector('#todo-list')
+        const addButton = document.querySelector('#add-button')
+
+        //변수 선언 - 이후 removeTodo()함수에서 문서 객체를 제거하기위한 용도로 만든 변수
+        let keyCount = 0
+
+        //함수 선언
+        const addTodo = () => {
+            //입력 양식에 내용이 없으면 추가하지 않는다.
+            if (input.value.trim() === '') {
+                alert('할 일을 입력해주세요.')
+                return
+            }
+
+            //문서 객체 설정
+
+            const item = document.createElement('div')
+            const checkbox = document.createElement('input')
+            const text = document.createElement('span')
+            const button = document.createElement('button')
+
+            //문서 객체를 식별할 키를 생성
+
+            //이후 removeTodo()함수에서 문서 객체를 제거하기 위한 용도로 만든 변수
+            const key = keyCount
+            keyCount += 1
+
+            //item 객체 조작하고 추가
+            item.setAttribute('data-key', key)
+            item.appendChild(checkbox)
+            item.appendChild(text)
+            item.appendChild(button)
+            todoList.appendChild(item)
+
+            //checkbox 객체조작
+
+            //<input type="checkbox">형태 구성
+            checkbox.type = 'checkbox'
+            //체크바스를 클릭하면 선 나타남
+            checkbox.addEventListener('change', (event) => {
+                item.style.textDecoration
+                    = event.target.checked ? 'line-through' : ''
+            })
+
+            //text 객체를 조작한다. 글자 형태 구성
+            text.textContent = input.value
+
+            //button 객체 조작
+            button.textContent = '제거하기'
+            button.addEventListener('click', () => {
+                removeTodo(key)
+            })
+
+            //입력 양식의 내용을 비
+            input.value = ''
+        }
+
+        const removeTodo = (key) => {
+            //식별 키로 문서 객체 제거
+            const item = document.querySelector(`[data-key="${key}"]`)
+            //위에서 지정한 <div data-key="숫자"를 기반으로 요소를 찾고 제거
+            todoList.removeChild(item)
+        }
+
+        // 이벤트 연결
+
+        addButton.addEventListener('click', addTodo)
+        input.addEventListener('keyup', (event) => {
+            //입력 양식에서 ENTER 키를 누르면 바로 addTodo()함수를 호출함.
+            const ENTER = 13
+            if (event.keyCode === ENTER) {
+                addTodo()
+            }
+        })
+    })
+</script>
+</html>
